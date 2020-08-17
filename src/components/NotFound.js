@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from "@material-ui/core"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../assets/css/NotFound.css'
 
 function NotFound() {

@@ -1,12 +1,13 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
 
 function Home() {
     return (
-        <div>
-            <Typography>
-                Hello world this is the home page of the App.
-            </Typography>
+        <div className="app">
+            <div className="app__header"><h1>
+                India
+            </h1></div>
+            <div className="app__left"></div>
+            <div className="app__right"></div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Box, AppBar, Toolbar, IconButton, Typography, SwipeableDrawer, List, ListItem } from '@material-ui/core'
-import { Menu } from '@material-ui/icons'
+import { Menu, Home } from '@material-ui/icons'
 import '../assets/css/Navigation.css'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
@@ -16,7 +16,8 @@ function Navigation() {
             fontFamily: "Audiowide",
             backgroundColor: "#1e1e30",
             color: "#007bff",
-        }
+        },
+        
     });
 
     const classes = useStyles();
@@ -30,7 +31,7 @@ function Navigation() {
                         <div className={classes.list} role="presentation" onClick={() => setState(false)}>
                             <List>
                                 <ListItem button key="home" component={Link} to="/">
-                                    Home
+                                    <Home /> Home
                                 </ListItem>
                             </List>
                         </div>

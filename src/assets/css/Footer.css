@@ -16,3 +16,9 @@
   text-decoration:none;
   color:#bdbdbd;
 }
+
+.links a:hover{
+  border-radius: 0.2rem;
+  color: #161625;
+  background-color: rgba(255, 255, 255, 0.75);
+}

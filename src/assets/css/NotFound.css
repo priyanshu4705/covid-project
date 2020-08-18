@@ -16,6 +16,21 @@
   align-items: center;
 }
 
+@media screen and ( max-width:740px ){
+  
+  .body{
+    justify-content: space-evenly;
+  }
+  
+  .content{
+    flex-direction: column;
+  }
+
+  .error{
+    font-size: 7.5rem !important;
+  }
+}
+
 .error {
   font-size: 15rem;
   text-transform: uppercase;

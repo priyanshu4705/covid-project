@@ -1,0 +1,30 @@
+.blog{
+    background-color: #161625;
+    font-family: Audiowide;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 30rem;
+    width: 100%;
+}
+
+.heading{
+    padding: 2rem 0;
+    font-size: 3rem;
+    color: #bdbdbd;
+}
+
+.section{
+    padding: 1rem 6rem;
+    font-size: 18px;
+}
+
+.question{
+   color: #6c757d;
+}
+
+.answer{
+    padding: 1rem 0;
+    color: #007bff;
+}

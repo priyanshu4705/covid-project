@@ -1,7 +1,6 @@
 import React from 'react'
 import '../assets/css/Blog.css'
 
-
 function Blog() {
     return (
         <div className="blog">

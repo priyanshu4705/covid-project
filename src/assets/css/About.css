@@ -1,3 +1,4 @@
 .about{
-    height: calc(100vh - 99px);
+    height: calc(100vh - 99px - 4rem);
+    margin-top: 4rem;
 }

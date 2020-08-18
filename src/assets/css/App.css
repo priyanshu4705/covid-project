@@ -15,4 +15,5 @@ body {
 
 .app {
   height: calc(100vh - 99px);
+  margin-top: 4rem;
 }

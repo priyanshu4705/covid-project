@@ -1,9 +1,10 @@
 import React from 'react'
 import '../assets/css/Blog.css'
-
+import Navigation from './Navigation'
 function Blog() {
     return (
         <div className="blog">
+            <Navigation />
             <h2 className="heading">COVID-19 VIRUS</h2>
             <div className="section general">
                 <p className="question">What is Coronavirus?</p>

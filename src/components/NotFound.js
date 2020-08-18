@@ -12,11 +12,13 @@ function NotFound() {
 
     return (
         <div className="body">
-            <div className="content">
-                <h2 className="error">404</h2>
-                <h2 className="message">Page Not Found</h2>
+            <div className="body_content">
+                <div className="content">
+                    <h2 className="error">404</h2>
+                    <h2 className="message">Page Not Found</h2>
+                </div>
+                <Button component={Link} to="/" style={style} className="btn" >↩ Back Home</Button>
             </div>
-            <Button component={Link} to="/" style={style} className="btn" >↩ Back Home</Button>
         </div>
     )
 }

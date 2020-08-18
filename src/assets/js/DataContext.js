@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
+import { sortData } from './Utils';
 
 export const DataContext = createContext();
 
@@ -12,6 +13,7 @@ export const DataProvider = (props) => {
                 .then(res => res.json())
                 .then(data => {
                     setCountries(data);
+                    data = sortData(data);
                     data.forEach(element =>{
                         console.log(element.country, element.cases, element.active, element.recovered, element.deaths);
                     })

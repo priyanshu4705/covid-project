@@ -38,6 +38,7 @@ body {
 }
 
 .app__right .MuiCardContent-root {
+  text-align: center;
   display: flex;
   flex-direction: column;
   flex-grow: 1;

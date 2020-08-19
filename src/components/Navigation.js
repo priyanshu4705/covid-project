@@ -29,7 +29,7 @@ function Navigation() {
     console.log(state);
     const useStyles = makeStyles({
         list: {
-            width: 240,
+            width: "15rem",
             height: "100vh",
             backgroundColor: "#1e1e30",
             color: "#007bff",
@@ -52,7 +52,7 @@ function Navigation() {
                 <AppBar style={{ backgroundColor: "#1e1e30" }}>
                     <Toolbar>
                         <IconButton onClick={() => setState(true)}><Menu fontSize="large" style={{ color: "#bdbdbd" }} /></IconButton>
-                        <Drawer anchor="left" open={state} onClose={() => setState(false)} onOpen={() => setState(true)}>
+                        <Drawer anchor="left" open={state} onClose={() => setState(false)} >
                             <div className={classes.list} role="presentation" onClick={() => setState(false)}>
                                 <List>
                                     <ListItem button className={classes.item} component={Link} to="/" key="home">

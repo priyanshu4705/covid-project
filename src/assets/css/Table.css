@@ -1,0 +1,32 @@
+.table{
+    margin-top: 1.25rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 13rem);
+}
+
+.table table{
+    display: table;
+    width: 100%;
+}
+
+.table tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.table td{
+    padding: 0.5rem;
+}
+
+.table tr:nth-of-type(odd){
+    background-color: #f3f2f8;
+}
+
+
+@media (max-width: 990px) {
+    .table{
+        height: calc(100vh - 19rem);
+    }
+}
+  

@@ -26,7 +26,6 @@ import { Link } from 'react-router-dom'
 function Navigation() {
 
     const [state, setState] = useState(false);
-    console.log(state);
     const useStyles = makeStyles({
         list: {
             width: "15rem",

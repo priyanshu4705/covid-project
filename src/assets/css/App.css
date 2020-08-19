@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,Audiowide, "Roboto", 
+  font-family: -apple-system, BlinkMacSystemFont, "Audiowide", "Roboto",
     "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+    "Helvetica Neue", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,4 +16,35 @@ body {
 .app {
   height: calc(100vh - 99px);
   margin-top: 4rem;
+  padding: 1.25rem;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.app__header {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app__dropdown {
+  width: 15rem;
+}
+
+.app__left {
+  flex: 0.9;
+}
+
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
 }

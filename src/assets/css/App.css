@@ -14,10 +14,9 @@ body {
 }
 
 .app {
-  height: calc(100vh - 99px);
   margin-top: 4rem;
   padding: 1.25rem;
-
+  background-color: #eeeeee;
   display: flex;
   justify-content: space-evenly;
 }
@@ -31,6 +30,12 @@ body {
 
 .app__dropdown {
   width: 15rem;
+}
+
+.app__stats{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
 }
 
 .app__left {

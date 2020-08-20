@@ -25,7 +25,7 @@ function Footer() {
             <div className="links">
                 <Link to="/"><Home /></Link>
                 <a href="https://github.com/priyanshu4705/covid-project" target="_blank" rel="noopener noreferrer"><GitHub /></a>
-                <a href="https://disease.sh/v3/covid-19/countries" target="_blank" rel="noopener noreferrer"><Storage /></a>
+                <a href="https://disease.sh/docs/" target="_blank" rel="noopener noreferrer"><Storage /></a>
                 <Link to="/blog"><Book /></Link>
                 <Link to="/about"><Group /></Link>
             </div>

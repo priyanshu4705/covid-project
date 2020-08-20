@@ -80,7 +80,7 @@ function Navigation() {
                                             </Typography></ListItemText>
                                         </ListItem>
                                     </a>
-                                    <a className={classes.link} href="https://disease.sh/v3/covid-19/countries" target="_blank" rel="noopener noreferrer">
+                                    <a className={classes.link} href="https://disease.sh/docs/" target="_blank" rel="noopener noreferrer">
                                         <ListItem button className={classes.item} key="api">
                                             <ListItemIcon style={{ fontSize: "1.125rem", color: "#007bff" }}><Storage /></ListItemIcon>
                                             <ListItemText><Typography style={{ fontFamily: "Audiowide", fontSize: "1.125rem" }}>

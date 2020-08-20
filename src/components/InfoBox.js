@@ -19,7 +19,7 @@ function InfoBox({ title, today, total }) {
     }
     return (
         <div className="infobox">
-            <Card>
+            <Card style={{ marginBottom: "1rem", marginRight: window.innerWidth < 990 ? 0 : "1rem" }}>
                 <CardContent>
                     <Typography className="infobox__title" style={styles}>{title}</Typography>
                     <h2 className="infobox__cases">Today + {today}</h2>

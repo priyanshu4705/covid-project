@@ -3,9 +3,9 @@
   cursor: pointer;
 }
 
-.infoBox:not(:last-child) {
+/* .infoBox:not(:last-child) {
   margin-right: 1rem;
-}
+} */
 
 .infoBox__cases {
   font-weight: 600;

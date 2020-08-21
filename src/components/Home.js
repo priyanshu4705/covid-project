@@ -43,7 +43,6 @@ function Home() {
 
     };
 
-    console.log(countryData);
     return (
         <div className="app">
             <Navigation />

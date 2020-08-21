@@ -1,6 +1,7 @@
 import React from 'react'
 import '../assets/css/InfoBox.css'
 import { Card, CardContent, Typography } from '@material-ui/core'
+import Countup from 'react-countup'
 
 function InfoBox({ title, today, total }) {
 
@@ -17,12 +18,13 @@ function InfoBox({ title, today, total }) {
         fontFamily: "Audiowide",
         fontSize: "1.125rem",
     }
+
     return (
         <div className="infobox">
             <Card style={{ marginBottom: "1rem", marginRight: window.innerWidth < 990 ? 0 : "1rem" }}>
                 <CardContent>
                     <Typography className="infobox__title" style={styles}>{title}</Typography>
-                    <h2 className="infobox__cases">Today + {today}</h2>
+                    <h2 className="infobox__cases">Today +{ today && <Countup end={today} />}</h2>
                     <Typography className="infobox__total" style={{ fontWeight: "600", fontFamily: "Audiowide" }}>Total {total} {title}</Typography>
                 </CardContent>
             </Card>

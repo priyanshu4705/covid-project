@@ -4,7 +4,7 @@ export const sortData = (data) => {
   return sortedData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
 };
 
-export const buildChartData = (data, caseType) => {
+export const buildGlobalChartData = (data, caseType) => {
   let chartData = [];
   let lastDataPoint;
   for (let date in data.cases) {
@@ -19,3 +19,26 @@ export const buildChartData = (data, caseType) => {
   }
   return chartData;
 };
+
+export const buildCountryChartData = (data, type="cases") =>{
+  if(data.message){
+    return data;
+  }
+
+  let chartData = [];
+  let lastpoint;
+  const reqdata = data.timeline[type];
+
+  for(let i in reqdata){
+    if(lastpoint){
+      let point = {
+        x:i,
+        y:reqdata[i] - lastpoint,
+      }
+      chartData.push(point);
+    }
+    lastpoint = reqdata[i];
+  }
+
+  return chartData;
+}

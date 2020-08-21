@@ -6,7 +6,7 @@ import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/c
 import Table from './Table'
 import InfoBox from './InfoBox';
 import LineGraph from './LineGraph'
-import { buildChartData } from '../assets/js/Utils'
+import { buildGlobalChartData, buildCountryChartData } from '../assets/js/Utils'
 
 function Home() {
 
@@ -27,20 +27,36 @@ function Home() {
             });
     }
 
+    //build chart data for all countries...
     useEffect(() => {
         const fetchData = async () => {
-            await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=60`)
+            await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=120`)
                 .then((response) => {
                     return response.json();
                 })
                 .then((data) => {
-                    let chartData = buildChartData(data, caseType);
+                    let chartData = buildGlobalChartData(data, caseType);
                     setData(chartData);
                 });
         };
 
         fetchData();
     }, [caseType]);
+
+
+    //build chartdata for a particular country
+    useEffect(() => {
+        const fetchData = async () => {
+            await fetch(`https://disease.sh/v3/covid-19/historical/${country}?lastdays=120`)
+                .then(res => res.json())
+                .then((data) =>{
+                    let chartData = buildCountryChartData(data,caseType);
+                    setData(chartData);
+                });
+        }
+
+        if(country !== "worldwide") fetchData();
+    }, [country, caseType]);
 
     //first time when the app fires the selected country should be worldwide
     useEffect(() => {
@@ -53,14 +69,14 @@ function Home() {
 
         if (countryCode === "worldwide") {
             getGlobalData();
-        }else{
+        } else {
             countries.forEach(country => {
-                if(country.value === countryCode){
+                if (country.value === countryCode) {
                     setCountryData(country);
                 }
             });
         }
-        
+
     };
 
     return (
@@ -91,7 +107,7 @@ function Home() {
                     <Card className="app__graph">
                         <CardContent>
                             <h3 className="app__graphTitle">{countryData.name} Daily new {caseType}</h3>
-                            <LineGraph data={data} caseType={caseType}/>
+                            <LineGraph data={data} caseType={caseType} />
                         </CardContent>
                     </Card>
                 </div>

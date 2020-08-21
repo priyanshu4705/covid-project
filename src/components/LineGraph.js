@@ -35,10 +35,17 @@ const options = {
     },
 };
 
-function LineGraph({data, caseType = "cases", ...props }) {
+function LineGraph({ data, caseType = "cases" }) {
 
-    return (
-        <div style={{height:"calc(100vh - 25rem)"}}>
+    const message = (
+        <>
+            <h2 style={{color:"red"}}>Ooops!!</h2>
+            <h1 style={{marginTop:"2rem"}}>{data.message}</h1>
+        </>
+    );
+
+    const chart = (
+        <div style={{ height: "calc(100vh - 25rem)" }}>
             {data?.length > 0 && (
                 <Line
                     options={options}
@@ -55,6 +62,9 @@ function LineGraph({data, caseType = "cases", ...props }) {
                 />
             )}
         </div>
+    );
+    return (
+        data.message ? message : chart
     );
 }
 

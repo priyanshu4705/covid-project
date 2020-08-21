@@ -26,6 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .app__dropdown {
@@ -65,7 +66,7 @@ body {
     flex-direction: column;
   }
 
-  .app__graph{
+  .app__header, .app__graph{
     margin-right: 0;
   }
 }

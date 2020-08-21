@@ -38,6 +38,17 @@ body {
   margin: 1rem 0;
 }
 
+.app__graph {
+  text-align: center;
+  height: calc(100vh - 20.65rem);
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.app__graphTitle {
+  margin-bottom: 1rem;
+}
+
 .app__left {
   flex: 0.9;
 }
@@ -52,5 +63,9 @@ body {
 @media (max-width: 990px) {
   .app, .app__stats {
     flex-direction: column;
+  }
+
+  .app__graph{
+    margin-right: 0;
   }
 }

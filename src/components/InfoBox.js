@@ -1,9 +1,9 @@
 import React from 'react'
 import '../assets/css/InfoBox.css'
-import { Card, CardContent, Typography } from '@material-ui/core'
+import { Card, CardContent, Typography, CardActionArea } from '@material-ui/core'
 import Countup from 'react-countup'
 
-function InfoBox({ title, today, total }) {
+function InfoBox({ title, today, total, ...props }) {
 
     let mycolor = "#000000de";
     if (title === "Recovered") {
@@ -21,12 +21,14 @@ function InfoBox({ title, today, total }) {
 
     return (
         <div className="infobox">
-            <Card style={{ marginBottom: "1rem", marginRight: window.innerWidth < 990 ? 0 : "1rem" }}>
-                <CardContent>
-                    <Typography className="infobox__title" style={styles}>{title}</Typography>
-                    <h2 className="infobox__cases">Today +{ today && <Countup end={today} />}</h2>
-                    <Typography className="infobox__total" style={{ fontWeight: "600", fontFamily: "Audiowide" }}>Total {total} {title}</Typography>
-                </CardContent>
+            <Card onClick={props.onClick} style={{ marginBottom: "1rem", marginRight: window.innerWidth < 990 ? 0 : "1rem" }}>
+                <CardActionArea>
+                    <CardContent>
+                        <Typography className="infobox__title" style={styles}>{title}</Typography>
+                        <Typography className="infobox__cases" variant="h6" style={{ fontWeight: "600", fontFamily: "Audiowide" }}>Today +{today && <Countup end={today} />}</Typography>
+                        <Typography className="infobox__total" style={{ fontWeight: "600", fontFamily: "Audiowide" }}>Total {total} {title}</Typography>
+                    </CardContent>
+                </CardActionArea>
             </Card>
         </div>
     )

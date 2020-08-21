@@ -5,6 +5,8 @@ import Navigation from './Navigation'
 import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/core';
 import Table from './Table'
 import InfoBox from './InfoBox';
+import LineGraph from './LineGraph'
+import { buildChartData } from '../assets/js/Utils'
 
 function Home() {
 
@@ -13,6 +15,8 @@ function Home() {
 
     const [countryData, setCountryData] = useState({});//storing selection data
     const [country, setCountry] = useState("worldwide");//storing dropdown selection
+    const [caseType, setCaseType] = useState("cases");
+    const [data, setData] = useState({});
 
     const getGlobalData = async () => {
         await fetch("https://disease.sh/v3/covid-19/all")
@@ -22,6 +26,22 @@ function Home() {
                 setCountryData(data);
             });
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=60`)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    let chartData = buildChartData(data, caseType);
+                    setData(chartData);
+                });
+        };
+
+        fetchData();
+    }, [caseType]);
+
     //first time when the app fires the selected country should be worldwide
     useEffect(() => {
         getGlobalData();
@@ -40,7 +60,7 @@ function Home() {
                 }
             });
         }
-
+        
     };
 
     return (
@@ -61,10 +81,19 @@ function Home() {
                 </div>
                 {/* Info-Boxes showing stats */}
                 <div className="app__stats">
-                    <InfoBox title="Cases" today={countryData.todayCases} total={countryData.cases} />
-                    <InfoBox title="Recovered" today={countryData.todayRecovered} total={countryData.recovered} />
-                    <InfoBox title="Deaths" today={countryData.todayDeaths} total={countryData.deaths} />
+                    <InfoBox onClick={(e) => setCaseType("cases")} title="Cases" today={countryData.todayCases} total={countryData.cases} />
+                    <InfoBox onClick={(e) => setCaseType("recovered")} title="Recovered" today={countryData.todayRecovered} total={countryData.recovered} />
+                    <InfoBox onClick={(e) => setCaseType("deaths")} title="Deaths" today={countryData.todayDeaths} total={countryData.deaths} />
 
+                </div>
+                {/* Graph with daily data */}
+                <div>
+                    <Card className="app__graph">
+                        <CardContent>
+                            <h3 className="app__graphTitle">{countryData.name} Daily new {caseType}</h3>
+                            <LineGraph data={data} caseType={caseType}/>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
             <div className="app__right">

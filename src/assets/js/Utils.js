@@ -27,13 +27,15 @@ export const buildCountryChartData = (data, type="cases") =>{
 
   let chartData = [];
   let lastpoint;
+  let ydata;
   const reqdata = data.timeline[type];
 
   for(let i in reqdata){
     if(lastpoint){
+      ydata = reqdata[i] - lastpoint;
       let point = {
         x:i,
-        y:reqdata[i] - lastpoint,
+        y: ydata < 0 ? 0 : ydata,
       }
       chartData.push(point);
     }

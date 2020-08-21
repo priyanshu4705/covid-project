@@ -30,7 +30,7 @@ function Home() {
     //build chart data for all countries...
     useEffect(() => {
         const fetchData = async () => {
-            await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=120`)
+            await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=150`)
                 .then((response) => {
                     return response.json();
                 })
@@ -47,7 +47,7 @@ function Home() {
     //build chartdata for a particular country
     useEffect(() => {
         const fetchData = async () => {
-            await fetch(`https://disease.sh/v3/covid-19/historical/${country}?lastdays=120`)
+            await fetch(`https://disease.sh/v3/covid-19/historical/${country}?lastdays=150`)
                 .then(res => res.json())
                 .then((data) =>{
                     let chartData = buildCountryChartData(data,caseType);

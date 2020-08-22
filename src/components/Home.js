@@ -27,20 +27,22 @@ function Home() {
             });
     }
 
+
+    const fetchGlobalDailyData = async () => {
+        await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=150`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let chartData = buildGlobalChartData(data, caseType);
+                setData(chartData);
+            });
+    };
+
     //build chart data for all countries...
     useEffect(() => {
-        const fetchData = async () => {
-            await fetch(`https://disease.sh/v3/covid-19/historical/all?lastdays=150`)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    let chartData = buildGlobalChartData(data, caseType);
-                    setData(chartData);
-                });
-        };
-
-        fetchData();
+        fetchGlobalDailyData();
+        // eslint-disable-next-line
     }, [caseType]);
 
 
@@ -49,13 +51,18 @@ function Home() {
         const fetchData = async () => {
             await fetch(`https://disease.sh/v3/covid-19/historical/${country}?lastdays=150`)
                 .then(res => res.json())
-                .then((data) =>{
-                    let chartData = buildCountryChartData(data,caseType);
+                .then((data) => {
+                    let chartData = buildCountryChartData(data, caseType);
                     setData(chartData);
                 });
         }
 
-        if(country !== "worldwide") fetchData();
+        if (country !== "worldwide") {
+            fetchData();
+        } else {
+            fetchGlobalDailyData();
+        }
+        // eslint-disable-next-line
     }, [country, caseType]);
 
     //first time when the app fires the selected country should be worldwide
@@ -113,6 +120,7 @@ function Home() {
                 </div>
             </div>
             <div className="app__right">
+                {/* Rank list */}
                 <Card>
                     <CardContent>
                         <h3>Countries with heighest cases</h3>

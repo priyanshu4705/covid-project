@@ -39,8 +39,8 @@ function LineGraph({ data, caseType = "cases" }) {
 
     const message = (
         <>
-            <h2 style={{color:"red"}}>Ooops!!</h2>
-            <h1 style={{marginTop:"2rem"}}>{data.message}</h1>
+            <h2 style={{ color: "red" }}>Ooops!!</h2>
+            <h1 style={{ marginTop: "2rem" }}>{data.message}</h1>
         </>
     );
 
@@ -53,8 +53,8 @@ function LineGraph({ data, caseType = "cases" }) {
                         datasets: [
                             {
                                 label: caseType,
-                                backgroundColor: "rgba(204, 16, 52, 0.5)",
-                                borderColor: "#CC1034",
+                                backgroundColor: caseType === "recovered" ? "rgba(125, 215, 29, 0.4)" : "rgba(204, 16, 52, 0.5)",
+                                borderColor: caseType === "recovered" ? "green" : "#CC1034",
                                 data: data,
                             },
                         ],

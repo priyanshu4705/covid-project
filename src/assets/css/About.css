@@ -1,4 +1,5 @@
 .about{
     height: calc(100vh - 99px - 4rem);
     margin-top: 4rem;
+    padding: 3rem;
 }

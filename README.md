@@ -1,6 +1,8 @@
-deployed project at : https://covid-project-df93b.web.app/
+#deployed project at : https://covid-project-df93b.web.app/
 
-To run on a localhost -->
+Android app code at : https://github.com/priyanshu4705/covid-project-android
+
+#To run on a localhost -->
 
 1. Download the zip file and extract
 2. go to COVID-PROJECT folder and open cmd there

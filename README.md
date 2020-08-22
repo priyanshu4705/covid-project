@@ -1,1 +1,8 @@
 deployed project at : https://covid-project-df93b.web.app/
+
+To run on a localhost -->
+
+1. Download the zip file and extract
+2. go to COVID-PROJECT folder and open cmd there
+3. run yarn add command to install all dependencies
+4. run yarn start to run the project at http://127.0.0.1:3000 or http://localhost:3000

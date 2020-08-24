@@ -1,16 +1,28 @@
 import React from 'react'
 import '../assets/css/About.css'
 import Navigation from './Navigation'
+import { Card, CardContent, Divider } from '@material-ui/core'
 function About() {
     return (
         <div className="about">
             <Navigation />
-            <h1>Priyanshu Srivastava</h1>
-            <h4>18,</h4>
-            <h3>Student, Software developer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sit ipsum rem incidunt iure autem, perspiciatis porro, omnis minima, ex voluptas cumque blanditiis distinctio saepe mollitia vitae. Doloremque, inventore saepe.</p>
-            <br /><br /><br />
-            <h1>Site In production</h1>
+            <Card>
+                <CardContent>
+                    <h1>Priyanshu Srivastava</h1>
+                    <h4>18,</h4>
+                    <h3>Student, Software developer, Backend</h3>
+                    <br />
+                    <Divider />
+                    <br />
+                    <p>- Python, Java, JavaScript, C.</p>
+                    <p>- Android, Swing-Awt, Javafx, Tkinter,<br />
+                       -  Data Science,  Machine Learning,<br />
+                       - Django, ReactJs, </p>
+                       <br />
+                    <Divider />
+                </CardContent>
+            </Card>
+            <h1 style={{marginTop:"2rem"}}>Site In production</h1>
         </div>
     )
 }

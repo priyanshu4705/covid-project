@@ -21,7 +21,7 @@ function InfoBox({ title, today, total, ...props }) {
 
     return (
         <div className="infobox">
-            <Card onClick={props.onClick} style={{ borderBottom:`5px solid ${mycolor}` ,marginBottom: "1rem", marginRight: window.innerWidth < 990 ? 0 : "1rem" }}>
+            <Card onClick={props.onClick} style={{ borderBottom:`5px solid ${mycolor}` ,marginBottom: "1rem", marginRight: window.innerWidth < 990 ? "0" : "1rem" }}>
                 <CardActionArea>
                     <CardContent>
                         <Typography className="infobox__title" style={styles}>{title}</Typography>

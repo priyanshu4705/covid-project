@@ -44,3 +44,18 @@ export const buildCountryChartData = (data, type="cases") =>{
 
   return chartData;
 }
+
+export const colorpallet = {
+  cases:{
+    backgroundColor:"",
+    color:"#555",
+  },
+  recovered:{
+    backgroundColor:"rgba(125, 215, 29, 0.4)",
+    color:"green",
+  },
+  deaths:{
+    backgroundColor:"rgba(204, 16, 52, 0.5)",
+    color:"#CC1034",
+  }
+}

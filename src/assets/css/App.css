@@ -10,13 +10,14 @@ body {
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   box-sizing: border-box;
 }
 
 .app {
   margin-top: 4rem;
   padding: 1.25rem;
-  background-color: #eeeeee;
+  background-color: #ddd;
   display: flex;
   justify-content: space-evenly;
 }
@@ -44,10 +45,6 @@ body {
   height: calc(100vh - 20.65rem);
   margin-bottom: 1rem;
   margin-right: 1rem;
-}
-
-.app__graphTitle {
-  margin-bottom: 1rem;
 }
 
 .app__left {

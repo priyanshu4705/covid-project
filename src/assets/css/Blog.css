@@ -28,6 +28,15 @@
     color: #007bff;
 }
 
+.topics{
+    display: flex;
+}
+
+.topics li{
+    margin: 0 1rem;
+    color: #bdbdbd;
+}
+
 @media screen and ( max-width: 480px){
     .heading{
         font-size: 2rem;
@@ -36,6 +45,11 @@
 
     .section{
         padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .topics{
+        flex-direction: column;
         font-size: 1rem;
     }
 }

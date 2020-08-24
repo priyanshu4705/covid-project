@@ -1,5 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import { colorpallet } from '../assets/js/Utils'
 
 const options = {
     legend: {
@@ -45,7 +46,7 @@ function LineGraph({ data, caseType = "cases" }) {
     );
 
     const chart = (
-        <div style={{ height: "calc(100vh - 25rem)" }}>
+        <div style={{ height: "calc(100vh - 25rem)", paddingTop:"1rem" }}>
             {data?.length > 0 && (
                 <Line
                     options={options}
@@ -53,8 +54,8 @@ function LineGraph({ data, caseType = "cases" }) {
                         datasets: [
                             {
                                 label: caseType,
-                                backgroundColor: caseType === "recovered" ? "rgba(125, 215, 29, 0.4)" : "rgba(204, 16, 52, 0.5)",
-                                borderColor: caseType === "recovered" ? "green" : "#CC1034",
+                                backgroundColor: colorpallet[caseType].backgroundColor,
+                                borderColor: colorpallet[caseType].color,
                                 data: data,
                             },
                         ],

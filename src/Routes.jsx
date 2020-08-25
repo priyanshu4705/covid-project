@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './components/Home'
-import Blog from './components/Blog'
-import About from './components/About'
-import NotFound from './components/NotFound'
+import Home from './components/Home.jsx'
+import Blog from './components/Blog.jsx'
+import About from './components/About.jsx'
+import NotFound from './components/NotFound.jsx'
 
 function Routes() {
     return (

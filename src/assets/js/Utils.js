@@ -20,8 +20,8 @@ export const buildGlobalChartData = (data, caseType) => {
   return chartData;
 };
 
-export const buildCountryChartData = (data, type="cases") =>{
-  if(data.message){
+export const buildCountryChartData = (data, type = "cases") => {
+  if (data.message) {
     return data;
   }
 
@@ -30,11 +30,11 @@ export const buildCountryChartData = (data, type="cases") =>{
   let ydata;
   const reqdata = data.timeline[type];
 
-  for(let i in reqdata){
-    if(lastpoint){
+  for (let i in reqdata) {
+    if (lastpoint) {
       ydata = reqdata[i] - lastpoint;
       let point = {
-        x:i,
+        x: i,
         y: ydata < 0 ? 0 : ydata,
       }
       chartData.push(point);
@@ -46,16 +46,35 @@ export const buildCountryChartData = (data, type="cases") =>{
 }
 
 export const colorpallet = {
-  cases:{
-    backgroundColor:"",
-    color:"#555",
+  cases: {
+    backgroundColor: "",
+    color: "#555",
   },
-  recovered:{
-    backgroundColor:"rgba(125, 215, 29, 0.4)",
-    color:"green",
+  recovered: {
+    backgroundColor: "rgba(125, 215, 29, 0.4)",
+    color: "green",
   },
-  deaths:{
-    backgroundColor:"rgba(204, 16, 52, 0.5)",
-    color:"#CC1034",
+  deaths: {
+    backgroundColor: "rgba(204, 16, 52, 0.5)",
+    color: "#CC1034",
+  }
+}
+
+export const NavStyle = {
+  iconStyle: { fontSize: "1.125rem", color: "#007bff" },
+  typoStyle: { fontFamily: "Audiowide", fontSize: "1.125rem" }
+};
+
+export const FooterStyle = {
+  btn: {
+      fontSize: '1.5rem',
+      fontFamily: "Audiowide",
+      color: "#bdbdbd",
+      padding: "0",
+  },
+  typography: {
+      fontSize: "1rem",
+      color: "#007bff",
+      fontFamily: "Audiowide"
   }
 }

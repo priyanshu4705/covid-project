@@ -22,6 +22,7 @@ import {
 import '../assets/css/Navigation.css'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
+import { NavStyle } from '../assets/js/Utils'
 
 function Navigation() {
 
@@ -55,35 +56,35 @@ function Navigation() {
                             <div className={classes.list} role="presentation" onClick={() => setState(false)}>
                                 <List>
                                     <ListItem button className={classes.item} component={Link} to="/" key="home">
-                                        <ListItemIcon style={{ fontSize: "1.125rem", color: "#007bff" }}><Home /></ListItemIcon>
-                                        <ListItemText><Typography style={{ fontFamily: "Audiowide", fontSize: "1.125rem" }}>
+                                        <ListItemIcon style={NavStyle.iconStyle}><Home /></ListItemIcon>
+                                        <ListItemText><Typography style={NavStyle.typoStyle}>
                                             Home
                                         </Typography></ListItemText>
                                     </ListItem>
                                     <ListItem button className={classes.item} component={Link} to="/blog" key="blog">
-                                        <ListItemIcon style={{ fontSize: "1.125rem", color: "#007bff" }}><Book /></ListItemIcon>
-                                        <ListItemText><Typography style={{ fontFamily: "Audiowide", fontSize: "1.125rem" }}>
+                                        <ListItemIcon style={NavStyle.iconStyle}><Book /></ListItemIcon>
+                                        <ListItemText><Typography style={NavStyle.typoStyle}>
                                             Blog
                                         </Typography></ListItemText>
                                     </ListItem>
                                     <ListItem button className={classes.item} component={Link} to="/about" key="about">
-                                        <ListItemIcon style={{ fontSize: "1.125rem", color: "#007bff" }}><People /></ListItemIcon>
-                                        <ListItemText><Typography style={{ fontFamily: "Audiowide", fontSize: "1.125rem" }}>
+                                        <ListItemIcon style={NavStyle.iconStyle}><People /></ListItemIcon>
+                                        <ListItemText><Typography style={NavStyle.typoStyle}>
                                             About us
                                         </Typography></ListItemText>
                                     </ListItem>
                                     <a className={classes.link} href="https://github.com/priyanshu4705/covid-project" target="_blank" rel="noopener noreferrer">
                                         <ListItem button className={classes.item} key="github">
-                                            <ListItemIcon style={{ fontSize: "1.125rem", color: "#007bff" }}><GitHub /></ListItemIcon>
-                                            <ListItemText><Typography style={{ fontFamily: "Audiowide", fontSize: "1.125rem" }}>
+                                            <ListItemIcon style={NavStyle.iconStyle}><GitHub /></ListItemIcon>
+                                            <ListItemText><Typography style={NavStyle.typoStyle}>
                                                 GitHub
                                             </Typography></ListItemText>
                                         </ListItem>
                                     </a>
                                     <a className={classes.link} href="https://disease.sh/docs/#/" target="_blank" rel="noopener noreferrer">
                                         <ListItem button className={classes.item} key="api">
-                                            <ListItemIcon style={{ fontSize: "1.125rem", color: "#007bff" }}><Storage /></ListItemIcon>
-                                            <ListItemText><Typography style={{ fontFamily: "Audiowide", fontSize: "1.125rem" }}>
+                                            <ListItemIcon style={NavStyle.iconStyle}><Storage /></ListItemIcon>
+                                            <ListItemText><Typography style={NavStyle.typoStyle}>
                                                 API
                                             </Typography></ListItemText>
                                         </ListItem>

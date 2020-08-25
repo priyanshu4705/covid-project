@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/css/Blog.css'
-import Navigation from './Navigation'
+import Navigation from './Navigation.jsx'
 import { Button } from '@material-ui/core'
 function Blog() {
 

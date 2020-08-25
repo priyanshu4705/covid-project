@@ -1,7 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "author":"Priyanshu Srivastava",
+  "short_name": "Covid Project",
+  "name": "Covid Project",
+  "author": "Priyanshu Srivastava",
+  "description": "A Covid tracker app for displaying info from Worldwide data to a particular country",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

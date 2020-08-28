@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react'
 import '../assets/css/App.css';
 import { DataContext } from '../assets/js/DataContext'
-import Navigation from './Navigation.jsx'
+import Navigation from '../components/Navigation.jsx'
 import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/core';
-import Table from './Table.jsx'
-import InfoBox from './InfoBox.jsx';
-import LineGraph from './LineGraph.jsx'
+import Table from '../components/Table.jsx'
+import InfoBox from '../components/InfoBox';
+import LineGraph from '../components/LineGraph.jsx'
 import { buildGlobalChartData, buildCountryChartData } from '../assets/js/Utils'
 
 function Home() {

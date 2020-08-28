@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/css/About.css'
-import Navigation from './Navigation.jsx'
+import Navigation from '../components/Navigation.jsx'
 import { Card, CardContent, Divider } from '@material-ui/core'
 function About() {
     return (

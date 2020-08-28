@@ -1,3 +1,7 @@
+import React from 'react'
+import { Circle, Popup } from 'react-leaflet'
+
+
 export const sortData = (data) => {
   const sortedData = [...data];
 
@@ -46,15 +50,15 @@ export const buildCountryChartData = (data, type = "cases") => {
 }
 
 export const colorpallet = {
-  cases: {
+  "cases": {
     backgroundColor: "",
     color: "#555",
   },
-  recovered: {
+  "recovered": {
     backgroundColor: "rgba(125, 215, 29, 0.4)",
     color: "green",
   },
-  deaths: {
+  "deaths": {
     backgroundColor: "rgba(204, 16, 52, 0.5)",
     color: "#CC1034",
   }
@@ -67,14 +71,55 @@ export const NavStyle = {
 
 export const FooterStyle = {
   btn: {
-      fontSize: '1.5rem',
-      fontFamily: "Audiowide",
-      color: "#bdbdbd",
-      padding: "0",
+    fontSize: '1.5rem',
+    fontFamily: "Audiowide",
+    color: "#bdbdbd",
+    padding: "0",
   },
   typography: {
-      fontSize: "1rem",
-      color: "#007bff",
-      fontFamily: "Audiowide"
+    fontSize: "1rem",
+    color: "#007bff",
+    fontFamily: "Audiowide"
   }
+}
+
+
+export const showDataOnMap = (countries, caseType = "cases") => {
+
+  const casesTypeColors = {
+    cases: {
+      hex: "#CC1034",
+      multiplier: 800,
+    },
+    recovered: {
+      hex: "#7dd71d",
+      multiplier: 1200,
+    },
+    deaths: {
+      hex: "#fb4443",
+      multiplier: 2000,
+    },
+  };
+
+  countries.map((country) => (
+    <Circle
+      center={[country.lat, country.long]}
+      fillOpacity={0.4}
+      color={casesTypeColors[caseType].hex}
+      fillColor={casesTypeColors[caseType].hex}
+      radius={
+        Math.sqrt(country[caseType]) * casesTypeColors[caseType].multiplier
+      }
+    >
+      <Popup>
+        <div className="info-container">
+          <div className="info-flag" style={{ backgroundImage: `url(${country.flag})` }} />
+          <div className="info-name">{country.name}</div>
+          <div className="info-confirmed">Cases: {country.cases}</div>
+          <div className="info-recovered">Recovered: {country.recovered}</div>
+          <div className="info-deaths">Deaths: {country.deaths}</div>
+        </div>
+      </Popup>
+    </Circle>
+  ))
 }

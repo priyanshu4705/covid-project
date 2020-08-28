@@ -19,7 +19,6 @@ import {
     GitHub,
     Storage
 } from '@material-ui/icons'
-import '../assets/css/Navigation.css'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import { NavStyle } from '../assets/js/Utils'
@@ -41,6 +40,11 @@ function Navigation() {
         link: {
             textDecoration: "none",
             color: "#007bff",
+        },
+        typo: {
+            paddingLeft: "1rem",
+            fontFamily: "Audiowide",
+            color: "#bdbdbd",
         }
     });
 
@@ -92,7 +96,7 @@ function Navigation() {
                                 </List>
                             </div>
                         </Drawer>
-                        <Typography variant="h5" style={{ paddingLeft: "1rem", fontFamily: "Audiowide", color: "#bdbdbd" }}>COVID-19 PROJECT</Typography>
+                        <Typography variant="h5" className={classes.typo}>COVID-19 PROJECT</Typography>
                     </Toolbar>
                 </AppBar>
             </Box>

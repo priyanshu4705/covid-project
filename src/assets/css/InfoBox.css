@@ -8,12 +8,6 @@
   margin-bottom: 0.5rem;
 }
 
-.infoBox__total {
-  font-weight: 700 !important;
-  font-size: 0.8rem !important;
-  margin-top: 1rem !important;
-}
-
 @media screen and (max-width:990px){
   .infoBox{
     margin-right: 0;

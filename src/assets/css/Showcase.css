@@ -1,0 +1,50 @@
+.showcase {
+  text-align: center;
+  margin: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+.MuiTypography-h6{
+    font-family: "Audiowide" !important;
+    font-weight: 600 !important;
+}
+
+.map {
+    height: 34rem;
+    padding: 0.5rem;
+  }
+  
+  .map .leaflet-container {
+    border-radius: 0.5rem;
+    height: 100%;
+  }
+  
+  .info-flag img {
+    width: 6.25rem;
+    border-radius: 0.4rem;
+  }
+  
+  .info-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .info-flag {
+    height: 5rem;
+    width: 100%;
+    background-size: cover;
+    border-radius: 0.5rem;
+  }
+  
+  .info-confirmed,
+  .info-recovered,
+  .info-deaths {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+  }
+  
+  .info-container {
+    width: 150px;
+  }
+  

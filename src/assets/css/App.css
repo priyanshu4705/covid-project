@@ -14,10 +14,16 @@ html, body {
   box-sizing: border-box;
 }
 
-.app {
+.app{
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.app__top {
   margin-top: 4rem;
   padding: 1.25rem;
-  background-color: #ddd;
   display: flex;
   justify-content: space-evenly;
 }
@@ -59,7 +65,7 @@ html, body {
 }
 
 @media (max-width: 990px) {
-  .app, .app__stats {
+  .app__top, .app__stats {
     flex-direction: column;
   }
 

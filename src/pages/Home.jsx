@@ -8,6 +8,7 @@ import InfoBox from '../components/InfoBox';
 import LineGraph from '../components/LineGraph.jsx'
 import { buildGlobalChartData, buildCountryChartData } from '../assets/js/Utils'
 import Footer from '../components/Footer';
+import Showcase from '../components/Showcase';
 
 function Home() {
 
@@ -17,7 +18,7 @@ function Home() {
     const [countryData, setCountryData] = useState({});//storing selection data
     const [country, setCountry] = useState("worldwide");//storing dropdown selection
     const [caseType, setCaseType] = useState("cases");
-    const [data, setData] = useState({});
+    const [data, setData] = useState({});//stores chart data
 
     const getGlobalData = async () => {
         await fetch("https://disease.sh/v3/covid-19/all")
@@ -91,44 +92,52 @@ function Home() {
         <>
             <Navigation />
             <div className="app">
-                <div className="app__left">
-                    {/* App header containing title and dropdown mwnu */}
-                    <div className="app__header">
-                        <h1>Covid-19 tracker</h1>
-                        <FormControl className="app__dropdown">
-                            <Select variant="outlined" value={country} onChange={onCountryChange}>
-                                <MenuItem key="worldwide" value="worldwide">Worldwide</MenuItem>
-                                {countries.map((country) => (
-                                    <MenuItem key={country.name} value={country.value}>{country.name}</MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </div>
-                    {/* Info-Boxes showing stats */}
-                    <div className="app__stats">
-                        <InfoBox onClick={(e) => setCaseType("cases")} title="Cases" today={countryData.todayCases} total={countryData.cases} />
-                        <InfoBox onClick={(e) => setCaseType("recovered")} title="Recovered" today={countryData.todayRecovered} total={countryData.recovered} />
-                        <InfoBox onClick={(e) => setCaseType("deaths")} title="Deaths" today={countryData.todayDeaths} total={countryData.deaths} />
+                <div className="app__top">
+                    <div className="app__left">
+                        {/* App header containing title and dropdown mwnu */}
+                        <div className="app__header">
+                            <h1>Covid-19 tracker</h1>
+                            <FormControl className="app__dropdown">
+                                <Select variant="outlined" value={country} onChange={onCountryChange}>
+                                    <MenuItem key="worldwide" value="worldwide">Worldwide</MenuItem>
+                                    {countries.map((country) => (
+                                        <MenuItem key={country.name} value={country.value}>{country.name}</MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                        </div>
+                        {/* Info-Boxes showing stats */}
+                        <div className="app__stats">
+                            <InfoBox onClick={(e) => setCaseType("cases")} title="Cases" today={countryData.todayCases} total={countryData.cases} />
+                            <InfoBox onClick={(e) => setCaseType("recovered")} title="Recovered" today={countryData.todayRecovered} total={countryData.recovered} />
+                            <InfoBox onClick={(e) => setCaseType("deaths")} title="Deaths" today={countryData.todayDeaths} total={countryData.deaths} />
 
+                        </div>
+                        {/* Graph with daily data */}
+                        <div>
+                            <Card className="app__graph">
+                                <CardContent>
+                                    <h2 className="app__graphTitle">{countryData.name} Daily new {caseType}</h2>
+                                    <LineGraph data={data} caseType={caseType} />
+                                </CardContent>
+                            </Card>
+                        </div>
                     </div>
-                    {/* Graph with daily data */}
-                    <div>
-                        <Card className="app__graph">
+                    <div className="app__right">
+                        {/* Rank list */}
+                        <Card>
                             <CardContent>
-                                <h3 className="app__graphTitle">{countryData.name} Daily new {caseType}</h3>
-                                <LineGraph data={data} caseType={caseType} />
+                                <h3>Countries with heighest cases</h3>
+                                <Table />
                             </CardContent>
                         </Card>
                     </div>
                 </div>
-                <div className="app__right">
-                    {/* Rank list */}
-                    <Card>
-                        <CardContent>
-                            <h3>Countries with heighest cases</h3>
-                            <Table />
-                        </CardContent>
-                    </Card>
+                <div className="app__bottom">
+                    <Showcase
+                        caseType={caseType}
+                        center={country === "worldwide" ? [0,0] : [countryData.lat,countryData.long]}
+                        zoom={country === "worldwide" ? 3 : 4} />
                 </div>
             </div>
             <Footer />

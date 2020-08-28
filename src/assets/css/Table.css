@@ -2,7 +2,7 @@
     margin-top: 1.25rem;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: calc(100vh - 11.7rem + 1px);
+    height: calc(100vh - 11.65rem);
 }
 
 .table table{

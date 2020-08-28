@@ -7,6 +7,7 @@ import Table from '../components/Table.jsx'
 import InfoBox from '../components/InfoBox';
 import LineGraph from '../components/LineGraph.jsx'
 import { buildGlobalChartData, buildCountryChartData } from '../assets/js/Utils'
+import Footer from '../components/Footer';
 
 function Home() {
 
@@ -87,48 +88,51 @@ function Home() {
     };
 
     return (
-        <div className="app">
+        <>
             <Navigation />
-            <div className="app__left">
-                {/* App header containing title and dropdown mwnu */}
-                <div className="app__header">
-                    <h1>Covid-19 tracker</h1>
-                    <FormControl className="app__dropdown">
-                        <Select variant="outlined" value={country} onChange={onCountryChange}>
-                            <MenuItem key="worldwide" value="worldwide">Worldwide</MenuItem>
-                            {countries.map((country) => (
-                                <MenuItem key={country.name} value={country.value}>{country.name}</MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                </div>
-                {/* Info-Boxes showing stats */}
-                <div className="app__stats">
-                    <InfoBox onClick={(e) => setCaseType("cases")} title="Cases" today={countryData.todayCases} total={countryData.cases} />
-                    <InfoBox onClick={(e) => setCaseType("recovered")} title="Recovered" today={countryData.todayRecovered} total={countryData.recovered} />
-                    <InfoBox onClick={(e) => setCaseType("deaths")} title="Deaths" today={countryData.todayDeaths} total={countryData.deaths} />
+            <div className="app">
+                <div className="app__left">
+                    {/* App header containing title and dropdown mwnu */}
+                    <div className="app__header">
+                        <h1>Covid-19 tracker</h1>
+                        <FormControl className="app__dropdown">
+                            <Select variant="outlined" value={country} onChange={onCountryChange}>
+                                <MenuItem key="worldwide" value="worldwide">Worldwide</MenuItem>
+                                {countries.map((country) => (
+                                    <MenuItem key={country.name} value={country.value}>{country.name}</MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    </div>
+                    {/* Info-Boxes showing stats */}
+                    <div className="app__stats">
+                        <InfoBox onClick={(e) => setCaseType("cases")} title="Cases" today={countryData.todayCases} total={countryData.cases} />
+                        <InfoBox onClick={(e) => setCaseType("recovered")} title="Recovered" today={countryData.todayRecovered} total={countryData.recovered} />
+                        <InfoBox onClick={(e) => setCaseType("deaths")} title="Deaths" today={countryData.todayDeaths} total={countryData.deaths} />
 
+                    </div>
+                    {/* Graph with daily data */}
+                    <div>
+                        <Card className="app__graph">
+                            <CardContent>
+                                <h3 className="app__graphTitle">{countryData.name} Daily new {caseType}</h3>
+                                <LineGraph data={data} caseType={caseType} />
+                            </CardContent>
+                        </Card>
+                    </div>
                 </div>
-                {/* Graph with daily data */}
-                <div>
-                    <Card className="app__graph">
+                <div className="app__right">
+                    {/* Rank list */}
+                    <Card>
                         <CardContent>
-                            <h3 className="app__graphTitle">{countryData.name} Daily new {caseType}</h3>
-                            <LineGraph data={data} caseType={caseType} />
+                            <h3>Countries with heighest cases</h3>
+                            <Table />
                         </CardContent>
                     </Card>
                 </div>
             </div>
-            <div className="app__right">
-                {/* Rank list */}
-                <Card>
-                    <CardContent>
-                        <h3>Countries with heighest cases</h3>
-                        <Table />
-                    </CardContent>
-                </Card>
-            </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 

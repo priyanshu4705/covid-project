@@ -1,10 +1,8 @@
-Remove Service worker in last build before final deployement
-
-<h3>deployed project at : https://covid-project-df93b.web.app/</h3>
+## deployed project at : https://covid-project-df93b.web.app/
 
 Android app code at : https://github.com/priyanshu4705/covid-project-android
 
-#To run on a localhost -->
+## To run on a localhost -->
 
 1. Download the zip file and extract
    OR

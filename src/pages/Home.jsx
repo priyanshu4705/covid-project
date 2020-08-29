@@ -136,8 +136,8 @@ function Home() {
                 <div className="app__bottom">
                     <Showcase
                         caseType={caseType}
-                        center={country === "worldwide" ? [0,0] : [countryData.lat,countryData.long]}
-                        zoom={country === "worldwide" ? 3 : 4} />
+                        center={country === "worldwide" ? [20,0] : [countryData.lat,countryData.long]}
+                        zoom={country === "worldwide" ? 2 : 4} />
                 </div>
             </div>
             <Footer />

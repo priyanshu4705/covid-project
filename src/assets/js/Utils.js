@@ -1,7 +1,3 @@
-import React from 'react'
-import { Circle, Popup } from 'react-leaflet'
-
-
 export const sortData = (data) => {
   const sortedData = [...data];
 
@@ -66,7 +62,7 @@ export const colorpallet = {
 
 export const NavStyle = {
   iconStyle: { fontSize: "1.125rem", color: "#007bff" },
-  typoStyle: { fontFamily: "Audiowide", fontSize: "1.125rem" }
+  typoStyle: { fontFamily: "Audiowide", fontSize: "1.125rem", fontWieght:"600" }
 };
 
 export const FooterStyle = {
@@ -84,42 +80,3 @@ export const FooterStyle = {
 }
 
 
-export const showDataOnMap = (countries, caseType = "cases") => {
-
-  const casesTypeColors = {
-    cases: {
-      hex: "#CC1034",
-      multiplier: 800,
-    },
-    recovered: {
-      hex: "#7dd71d",
-      multiplier: 1200,
-    },
-    deaths: {
-      hex: "#fb4443",
-      multiplier: 2000,
-    },
-  };
-
-  countries.map((country) => (
-    <Circle
-      center={[country.lat, country.long]}
-      fillOpacity={0.4}
-      color={casesTypeColors[caseType].hex}
-      fillColor={casesTypeColors[caseType].hex}
-      radius={
-        Math.sqrt(country[caseType]) * casesTypeColors[caseType].multiplier
-      }
-    >
-      <Popup>
-        <div className="info-container">
-          <div className="info-flag" style={{ backgroundImage: `url(${country.flag})` }} />
-          <div className="info-name">{country.name}</div>
-          <div className="info-confirmed">Cases: {country.cases}</div>
-          <div className="info-recovered">Recovered: {country.recovered}</div>
-          <div className="info-deaths">Deaths: {country.deaths}</div>
-        </div>
-      </Popup>
-    </Circle>
-  ))
-}

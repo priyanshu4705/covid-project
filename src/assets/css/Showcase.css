@@ -19,6 +19,7 @@
     height: 100%;
   }
   
+  
   .info-flag img {
     width: 6.25rem;
     border-radius: 0.4rem;
@@ -27,11 +28,10 @@
   .info-name {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #555;
   }
   
   .info-flag {
-    height: 5rem;
+    height: 8rem;
     width: 100%;
     background-size: cover;
     border-radius: 0.5rem;
@@ -42,9 +42,11 @@
   .info-deaths {
     font-size: 1rem;
     margin-top: 0.4rem;
+    font-weight: 600;
   }
   
   .info-container {
-    width: 150px;
+    width: 12rem;
+    font-family: "Audiowide";
   }
   

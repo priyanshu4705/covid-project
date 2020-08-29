@@ -2,6 +2,7 @@ import React from 'react'
 import '../assets/css/InfoBox.css'
 import { Card, CardContent, Typography, CardActionArea } from '@material-ui/core'
 import Countup from 'react-countup'
+import { NavStyle } from '../assets/js/Utils'
 
 function InfoBox({ title, today, total, ...props }) {
 
@@ -25,8 +26,8 @@ function InfoBox({ title, today, total, ...props }) {
                 <CardActionArea>
                     <CardContent>
                         <Typography className="infobox__title" style={styles}>{title}</Typography>
-                        <Typography className="infobox__cases" variant="h6" style={{ fontWeight: "600", fontFamily: "Audiowide" }}>Today +{today && <Countup end={today} />}</Typography>
-                        <Typography className="infobox__total" style={{ fontWeight: "600", fontFamily: "Audiowide" }}>Total {total} {title}</Typography>
+                        <Typography className="infobox__cases" variant="h6" style={NavStyle.typoStyle}>Today +{today && <Countup end={today} />}</Typography>
+                        <Typography className="infobox__total" variant="h6" style={NavStyle.typoStyle}>Total {total} {title}</Typography>
                     </CardContent>
                 </CardActionArea>
             </Card>

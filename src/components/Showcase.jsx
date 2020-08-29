@@ -33,8 +33,8 @@ function Showcase({ caseType = "cases", center, zoom }) {
                     <div className="map">
                         <Map zoom={zoom} center={center}>
                             <TileLayer
-                                url="	https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-                                attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
                             {countries.map((country) => (
                                 <Circle

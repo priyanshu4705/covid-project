@@ -1,19 +1,18 @@
 import React, { useContext } from 'react'
 import '../assets/css/Showcase.css'
 import { Card, CardContent, Typography } from '@material-ui/core'
-import { Map, TileLayer, Circle, Popup   } from 'react-leaflet'
+import { Map, TileLayer, Circle, Popup } from 'react-leaflet'
 import { DataContext } from '../assets/js/DataContext'
 
 
 function Showcase({ caseType = "cases", center, zoom }) {
-
 
     const { value1 } = useContext(DataContext);
     const [countries] = value1;
 
     const casesTypeColors = {
         cases: {
-            hex: "#555",
+            hex: "#666",
             multiplier: 800,
         },
         recovered: {
@@ -34,8 +33,8 @@ function Showcase({ caseType = "cases", center, zoom }) {
                     <div className="map">
                         <Map zoom={zoom} center={center}>
                             <TileLayer
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="	https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+                                attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                             />
                             {countries.map((country) => (
                                 <Circle

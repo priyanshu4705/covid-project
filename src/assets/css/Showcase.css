@@ -38,6 +38,7 @@
   }
   
   .info-confirmed,
+  .info-active,
   .info-recovered,
   .info-deaths {
     font-size: 1rem;

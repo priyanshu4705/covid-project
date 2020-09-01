@@ -1,3 +1,5 @@
+// Blog page Contributed by :- Rishab Gupta
+
 import React from 'react'
 import '../assets/css/Blog.css'
 import Navigation from '../components/Navigation.jsx'

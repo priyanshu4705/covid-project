@@ -38,6 +38,7 @@ function Showcase({ caseType = "cases", center, zoom }) {
                             />
                             {countries.map((country) => (
                                 <Circle
+                                    key={country.name}
                                     center={[country.lat, country.long]}
                                     fillOpacity={0.4}
                                     color={casesTypeColors[caseType].hex}
@@ -51,6 +52,7 @@ function Showcase({ caseType = "cases", center, zoom }) {
                                             <div className="info-flag" style={{ backgroundImage: `url(${country.flag})` }} />
                                             <div className="info-name">{country.name}</div>
                                             <div className="info-confirmed">Cases: {country.cases}</div>
+                                            <div className="info-active">Active: {country.active}</div>
                                             <div className="info-recovered">Recovered: {country.recovered}</div>
                                             <div className="info-deaths">Deaths: {country.deaths}</div>
                                         </div>

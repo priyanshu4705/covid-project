@@ -53,3 +53,8 @@
         font-size: 1rem;
     }
 }
+
+.topics .MuiButtonBase-root:hover{
+background-color: #1e1e30 !important;
+    color: #eee !important;
+}

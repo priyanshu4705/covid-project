@@ -11,7 +11,7 @@ function About() {
                 <Card>
                     <CardContent>
                         <h1>Priyanshu Srivastava</h1>
-                        <h4>18,</h4>
+                        <h4>19,</h4>
                         <h3>Student, Software developer, Backend</h3>
                         <br />
                         <Divider />

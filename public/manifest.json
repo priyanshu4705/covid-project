@@ -3,6 +3,7 @@
   "name": "Covid Project",
   "author": "Priyanshu Srivastava",
   "description": "A Covid tracker app for displaying info from Worldwide data to a particular country",
+  "keywords":["javascript", "priyanshu srivastava","@priyanshu4705" , "react", "react.js", "covid-19", "project"],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

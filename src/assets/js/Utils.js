@@ -1,3 +1,4 @@
+//Sorts the table in ascending order
 export const sortData = (data) => {
   const sortedData = [...data];
 
@@ -9,9 +10,10 @@ export const buildGlobalChartData = (data, caseType) => {
   let lastDataPoint;
   for (let date in data.cases) {
     if (lastDataPoint) {
+      let ydata = data[caseType][date] - lastDataPoint;
       let newDataPoint = {
         x: date,
-        y: data[caseType][date] - lastDataPoint,
+        y: ydata < 0 ? 0 : ydata, //check for less than 0
       };
       chartData.push(newDataPoint);
     }
@@ -35,7 +37,7 @@ export const buildCountryChartData = (data, type = "cases") => {
       ydata = reqdata[i] - lastpoint;
       let point = {
         x: i,
-        y: ydata < 0 ? 0 : ydata,
+        y: ydata < 0 ? 0 : ydata, //check for less than zero
       }
       chartData.push(point);
     }
@@ -45,6 +47,7 @@ export const buildCountryChartData = (data, type = "cases") => {
   return chartData;
 }
 
+// for Info-Box and graph and Map theme
 export const colorpallet = {
   "cases": {
     backgroundColor: "",
@@ -62,7 +65,7 @@ export const colorpallet = {
 
 export const NavStyle = {
   iconStyle: { fontSize: "1.125rem", color: "#007bff" },
-  typoStyle: { fontFamily: "Audiowide", fontSize: "1.125rem", fontWieght:"600" }
+  typoStyle: { fontFamily: "Audiowide", fontSize: "1.125rem", fontWieght: "600" }
 };
 
 export const FooterStyle = {
